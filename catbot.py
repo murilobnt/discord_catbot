@@ -1,9 +1,10 @@
 from discord.ext import commands
+import os
 
-from src.cogs.math_question import MathQuestion
 from src.cogs.random_story import RandomStory
 from src.cogs.wyr_generator import WyrGenerator
 from src.cogs.anonymous_message import AnonymousMessage
+from src.cogs.random_wyr import RandomWyr
 
 bot = commands.Bot(command_prefix='!')
 
@@ -14,8 +15,8 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-#bot.add_cog(MathQuestion())
 bot.add_cog(RandomStory(bot))
+bot.add_cog(RandomWyr(bot))
 bot.add_cog(WyrGenerator(bot))
 bot.add_cog(AnonymousMessage(bot))
-#bot.run('secret-taken-away-because-my-bot-is-currently-online-;)')
+bot.run(os.environ['DISCORD_BOT_KEY'])

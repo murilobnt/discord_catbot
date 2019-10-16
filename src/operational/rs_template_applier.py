@@ -1,12 +1,9 @@
-import sqlite3
 import random
+from src.common.template_applier import TemplateApplier
 
-from psycopg2.extensions import AsIs
-from src.database.catbot_database import CatbotDatabase
-
-class TemplateContainer:
+class RSTemplateApplier(TemplateApplier):
     def __init__(self):
-        self.cb_d = CatbotDatabase()
+        super().__init__()
 
     def generate_random_story(self, mention):
         r_number = random.randint(1, 40)
@@ -16,38 +13,11 @@ class TemplateContainer:
         try:
             template = getattr(self, str("template_" + str(template_id)))
         except AttributeError:
-            raise NotImplementedError("Class `{}` does not implement `{}`".format(self.__class__.__name__, "template_1"))
+            raise NotImplementedError("Class `{}` does not implement `{}`".format(self.__class__.__name__, str("template_" + str(template_id))))
         self.connect_db()
         sentence = template(mention)
         self.close_db_connection()
         return sentence
-
-    def connect_db(self):
-        self.cb_d.connect()
-        self.cursor = self.cb_d.cursor
-
-    def close_db_connection(self):
-        self.cb_d.close()
-
-    def get_random_noun(self, field = "value"):
-        self.cursor.execute("SELECT %s FROM nouns ORDER BY RANDOM() LIMIT 1", (AsIs(field),))
-        return str(self.cursor.fetchone()[0])
-
-    def get_random_adjective(self, field = "value"):
-        self.cursor.execute("SELECT %s FROM adjectives ORDER BY RANDOM() LIMIT 1", (AsIs(field),))
-        return str(self.cursor.fetchone()[0])
-
-    def get_random_adverb(self, field = "value"):
-        self.cursor.execute("SELECT %s FROM adverbs ORDER BY RANDOM() LIMIT 1", (AsIs(field),))
-        return str(self.cursor.fetchone()[0])
-
-    def get_random_t_verb(self, field = "value"):
-        self.cursor.execute("SELECT %s FROM verbs WHERE type='transitive' ORDER BY RANDOM() LIMIT 1", (AsIs(field),))
-        return str(self.cursor.fetchone()[0])
-
-    def get_random_i_verb(self, field = "value"):
-        self.cursor.execute("SELECT %s FROM verbs WHERE type='intransitive' ORDER BY RANDOM() LIMIT 1", (AsIs(field),))
-        return str(self.cursor.fetchone()[0])
 
     def template_1(self, mention):
         verb = self.get_random_t_verb("third")

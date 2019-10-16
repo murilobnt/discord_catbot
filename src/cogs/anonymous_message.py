@@ -1,27 +1,16 @@
 import discord
-import base64
 
 from discord.ext import commands
 from discord.errors import Forbidden
-from Crypto.Cipher import AES
+from src.crypto.crypto import encrypt_val
 
 from src.database.catbot_database import CatbotDatabase
 
-class AnonymousMessage:
-    def encrypt(self, content):
-        enc_secret = AES.new(self.master_key[:32])
-        tag_string = (str(content) +
-                      (AES.block_size -
-                       len(str(content)) % AES.block_size) * "\0")
-        cipher_text = base64.b64encode(enc_secret.encrypt(tag_string))
-
-        return str(cipher_text.decode("utf-8"))
-
+class AnonymousMessage(commands.Cog):
     def __init__(self, bot):
         self.cb_d = CatbotDatabase()
         self.bot = bot
         self.text_channel_converter = commands.TextChannelConverter()
-        #self.master_key = "master-key-taken-away-;)"
 
     @commands.command(pass_context=True)
     @commands.is_owner()
@@ -86,6 +75,6 @@ class AnonymousMessage:
             l_channel = self.bot.get_guild(guildid).get_channel(db_l_channel)
 
             await channel.send("**New message:**\n" + message.content + "\n---")
-            author_name_enc = self.encrypt(str(message.author).encode("utf-8"))
-            author_id_enc = self.encrypt(str(message.author.id).encode("utf-8"))
+            author_name_enc = encrypt_val(str(message.author).encode("utf-8"))
+            author_id_enc = encrypt_val(str(message.author.id).encode("utf-8"))
             await l_channel.send("**--- MESSAGE ---**\n" + message.content + "\nAuthor: ||" + author_name_enc + "||\nAuthor ID: ||" + author_id_enc + "||\n---")

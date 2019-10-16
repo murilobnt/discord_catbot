@@ -24,6 +24,34 @@ verbs = [
 ('transitive', 'eat', 'ate', 'eating', 'eats'),
 ('transitive', 'need', 'needed', 'needing', 'needs'),
 ('transitive', 'roll', 'rolled', 'rolling', 'rolls'),
+('transitive', 'look', 'looked', 'looking', 'looks'),
+('transitive', 'worship', 'worshiped', 'whorshiping', 'whorships'),
+('transitive', 'feed', 'fed', 'feeding', 'feeds'),
+('transitive', 'eliminate', 'eliminated', 'eliminating', 'eliminates'),
+('transitive', 'suplex', 'suplexed', 'suplexing', 'suplexes'),
+('transitive', 'summon', 'summoned', 'summoning', 'summons'),
+('transitive', 'lure', 'lured', 'luring', 'lures'),
+('transitive', 'beat', 'beated', 'beating', 'beats'),
+('transitive', 'befriend', 'befriended', 'befriending', 'befriends'),
+('transitive', 'seduce', 'seduced', 'seducing', 'seduces'),
+('transitive', 'drink', 'drank', 'drinking', 'drinks'),
+('transitive', 'impress', 'impressed', 'impressing', 'impresses'),
+('transitive', 'intoxicate', 'intoxicated', 'intoxicating', 'intoxicates'),
+('transitive', 'lick', 'licked', 'licking', 'licks'),
+('transitive', 'smash', 'smashed', 'smashing', 'smashs'),
+('transitive', 'duel', 'dueled', 'duelling', 'duels'),
+('transitive', 'investigate', 'investigated', 'investigating', 'investigates'),
+('transitive', 'mimic', 'mimicked', 'mimicking', 'mimics'),
+('transitive', 'scare', 'scared', 'schypnotizesaring', 'scares'),
+('transitive', 'massage', 'massaged', 'massaging', 'massages'),
+('transitive', 'hypnotize', 'hypnotized', 'hypnotizing', 'hypnotizes'),
+('transitive', 'lose', 'lost', 'losing', 'loses'),
+('transitive', 'insult', 'insulted', 'insulting', 'insults'),
+('transitive', 'pet', 'petted', 'petting', 'pets'),
+('transitive', 'tickle', 'tickled', 'tickling', 'tickles'),
+('transitive', 'imagine', 'imagined', 'imagining', 'imagines'),
+('transitive', 'follow', 'followed', 'following', 'follows'),
+('transitive', 'transform into', 'transformed into', 'transforming into', 'transforms into'),
 ('intransitive', 'sleep', 'slept', 'sleeping', 'sleeps'),
 ('intransitive', 'die', 'died', 'dying', 'dies'),
 ('intransitive', 'clap', 'clapped', 'clapping', 'claps'),
@@ -31,6 +59,7 @@ verbs = [
 ('intransitive', 'vanish', 'vanished', 'vanishing', 'vanishes'),
 ('intransitive', 'collapse', 'collapsed', 'collapsing', 'collapses'),
 ('intransitive', 'lie', 'lied', 'lying', 'lies'),
+('intransitive', 'dab', 'dabbed', 'dabbing', 'dabs'),
 ('intransitive', 'laugh', 'laughed', 'laughing', 'laughs')
 ]
 
@@ -53,7 +82,12 @@ adjectives = [
 ('best',),
 ('blind',),
 ('deaf',),
-('mute',)
+('mute',),
+('funny',),
+('furry',),
+('epic',),
+('cringey',),
+('real',)
 ]
 
 adverbs = [
@@ -104,6 +138,8 @@ nouns = [
 ('outlaw', 'outlaws'),
 ('sheep', 'sheeps'),
 ('potato chip', 'potato chips'),
+('pickle', 'pickles'),
+('human', 'humans'),
 ('bird', 'birds'),
 ('plane', 'planes')
 ]

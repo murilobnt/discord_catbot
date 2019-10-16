@@ -38,3 +38,23 @@
 38: Mention vs noun. Who would win?
 39: Mention, buy me a noun. Pleeease?
 40: Mention is my favorite noun around here ;)
+
+-- RWYR templates --
+
+1: Would you rather... verb a noun or verb nouns
+2: Would you rather... verb a noun or verb a noun
+3: Would you rather... iverb or iverb
+4: Would you rather... verb a noun who just verb your noun or verb them
+5: Would you rather become... a noun, but you will verb your noun or adjective
+6: Would you rather... be past-verb or verb
+7: Would you rather name your movie... noun verb noun or The adjective adjective adjective noun
+8: Would you rather have your work related to... gerund-verb nouns or gerund nouns
+9: Would you rather have... Noun to be adjective or adjective nouns to be adjective
+11: Would you rather... Never be able to verb nouns or Never be able to verb nouns
+12: Would you rather... Verb your nouns or be past-verb by your nouns
+13: Would you rather clean a room full of... nouns or nouns
+14: Would you rather be... adjective with no nouns or adjective with no nouns
+15: Would you rather be afraid of... nouns or nouns
+16: Would you rather be... adverb past-verb by a noun or be past-verb by a noun
+17: Would you rather become... noun or noun
+18: Would you rather only be able to... verb adjective nouns or verb adjective nouns
